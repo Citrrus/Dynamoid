@@ -17,7 +17,7 @@ module Dynamoid
       #
       # @since 0.2.0
       def table_name
-        if Dynamoid::Config.namespace.blank? do
+        if Dynamoid::Config.namespace.blank?
           "#{options[:name] ? options[:name] : self.name.split('::').last.downcase.pluralize}"
         else
           "#{Dynamoid::Config.namespace}_#{options[:name] ? options[:name] : self.name.split('::').last.downcase.pluralize}"
